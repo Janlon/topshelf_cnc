@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B26FA378-88AD-4671-B73E-54259C20E4DC}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Cancela</RootNamespace>
+    <AssemblyName>Cancela</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dapper, Version=1.50.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.ConfigurationManager, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Configuration.ConfigurationManager.5.0.0\lib\net461\System.Configuration.ConfigurationManager.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Security.AccessControl, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.AccessControl.5.0.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Permissions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Permissions.5.0.0\lib\net461\System.Security.Permissions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Principal.Windows.5.0.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Topshelf, Version=4.3.0.0, Culture=neutral, PublicKeyToken=b800c4cfcdeea87b, processorArchitecture=MSIL">
+      <HintPath>..\packages\Topshelf.4.3.0\lib\net452\Topshelf.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Acesso\AcessoDados.cs" />
+    <Compile Include="Acesso\AcessoVeiculos.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Comum\AbreFalha.cs" />
+    <Compile Include="Comum\AcessoTemporario.cs" />
+    <Compile Include="Comum\AjustaDataHora.cs" />
+    <Compile Include="Comum\AtualizaListaControladora.cs" />
+    <Compile Include="Comum\Base.cs" />
+    <Compile Include="Comum\ColaboradorConsulta.cs" />
+    <Compile Include="Comum\CriaChaveRegistroWindows.cs" />
+    <Compile Include="Comum\Enviar.cs" />
+    <Compile Include="Comum\FechaFalha.cs" />
+    <Compile Include="Comum\GravaAcesso.cs" />
+    <Compile Include="Comum\GravaAcessoPatio.cs" />
+    <Compile Include="Comum\GravaAcessoSphera.cs" />
+    <Compile Include="Comum\GravaEventLog.cs" />
+    <Compile Include="Comum\GravaScoreBiometria.cs" />
+    <Compile Include="Comum\InicializaControladora.cs" />
+    <Compile Include="Comum\InserirDuploAcesso.cs" />
+    <Compile Include="Comum\InserirOcorrenciaGuarda.cs" />
+    <Compile Include="Comum\LocalizaCracha.cs" />
+    <Compile Include="Comum\LocalizaCrachaMaster.cs" />
+    <Compile Include="Comum\LocalizaVeiculo.cs" />
+    <Compile Include="Comum\Logar.cs" />
+    <Compile Include="Comum\NovaSecao.cs" />
+    <Compile Include="Comum\OracleDynamicParameters.cs" />
+    <Compile Include="Comum\PegaCamerasLAP.cs" />
+    <Compile Include="Comum\PegaCamerasLBF.cs" />
+    <Compile Include="Comum\PegaConfiguracaoLAP.cs" />
+    <Compile Include="Comum\PegaConfiguracaoLBF.cs" />
+    <Compile Include="Comum\PegaConfiguracaoServico.cs" />
+    <Compile Include="Comum\PegaControladora.cs" />
+    <Compile Include="Comum\PegaPortaEscuta.cs" />
+    <Compile Include="Comum\Retorna_S.cs" />
+    <Compile Include="Comum\RetornoTesteLAP.cs" />
+    <Compile Include="Comum\RetornoTesteLBF.cs" />
+    <Compile Include="Comum\SolicitaLista.cs" />
+    <Compile Include="Comum\TestePing.cs" />
+    <Compile Include="Comum\ValidarMotivacao.cs" />
+    <Compile Include="Comum\ValidarMotivacaoSaida.cs" />
+    <Compile Include="Comum\ValidaUltimoAcesso.cs" />
+    <Compile Include="Comum\VerificaAcesso.cs" />
+    <Compile Include="Comum\VerificaAcessoDiretoEstacionamento.cs" />
+    <Compile Include="Comum\VerificaAcessoDiretoSphera.cs" />
+    <Compile Include="Comum\VerificaBalanca.cs" />
+    <Compile Include="Comum\VerificaDuploAcesso.cs" />
+    <Compile Include="Comum\VerificaGuarda.cs" />
+    <Compile Include="Comum\VerificaLAP.cs" />
+    <Compile Include="Comum\VerificaLBF.cs" />
+    <Compile Include="Comum\VerificaListaNegra.cs" />
+    <Compile Include="Comum\VerificandoDuploAccesso.cs" />
+    <Compile Include="Comum\VerificaRetornoScore.cs" />
+    <Compile Include="Comum\VerificaVagas.cs" />
+    <Compile Include="ConfigureService.cs" />
+    <Compile Include="Dominio\Log.cs" />
+    <Compile Include="Dominio\TipoLog.cs" />
+    <Compile Include="Infra\BaseInfra.cs" />
+    <Compile Include="Infra\ILog.cs" />
+    <Compile Include="Infra\ITipoLog.cs" />
+    <Compile Include="Infra\ITipoTemplate.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Regras\Regras.cs" />
+    <Compile Include="Servico.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="favicon.ico" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
